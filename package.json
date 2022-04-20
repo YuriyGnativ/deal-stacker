@@ -1,0 +1,7 @@
+{
+  "name": "deal-stacker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "dmytro.shklianka <dmytro.shklianka.work@gmail.com>",
+  "license": "MIT"
+}
