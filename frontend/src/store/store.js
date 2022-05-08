@@ -1,8 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import mainSlice from "../redux/mainSlice";
+
+import { snackbarSlice, calcDataSlice, stepSlice } from "../redux";
 
 const rootReducer = combineReducers({
-  main: mainSlice,
+  calcData: calcDataSlice,
+  snackbars: snackbarSlice,
+  steps: stepSlice,
 });
 
 export const store = configureStore({
