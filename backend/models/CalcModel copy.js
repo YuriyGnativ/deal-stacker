@@ -2,318 +2,184 @@ const { Schema, model } = require("mongoose");
 
 const CalcDataSchema = new Schema(
   {
-    step: {
+    Stage: {
       type: Number,
     },
-    ["Purchase which can be borrowed"]: new Schema({
-      title: {
-        type: String,
-        default: "Purchase which can be borrowed",
-      },
-      ["Surveyors Valuation"]: {
-        type: Number,
-      },
-      ["Purchase Price"]: {
-        type: Number,
-      },
-    }),
-
-    ["Up front costs which can't be borrowed"]: new Schema({
-      ["Buying Survey"]: {
-        type: Number,
-      },
-      ["Sourcing Fee"]: {
-        type: Number,
-      },
-      ["Insurance"]: {
-        type: Number,
-      },
-      ["SDLT"]: {
-        type: Number,
-      },
-      ["Buyers Solicitor"]: {
-        type: Number,
-      },
-      ["Planning/Architect (Borrowed)"]: {
-        type: Number,
-      },
-      ["Additional Legals"]: {
-        type: Number,
-      },
-      ["Money at Exchange"]: {
-        type: Number,
-      },
-      ["Sourced Solicitor Fee"]: {
-        type: Number,
-      },
-    }),
-    ["Costs during the project"]: new Schema({
-      ["Build"]: {
-        type: Number,
-      },
-      ["Project Manager (usually 10%)"]: {
-        type: Number,
-      },
-      ["CIL/S106"]: {
-        type: Number,
-      },
-      ["Planning/Architect (Costs during the project)"]: {
-        type: Number,
-      },
-      ["Legals during project"]: {
-        type: Number,
-      },
-      ["Drawdown Surveys"]: {
-        type: Number,
-      },
-      ["Warranty"]: {
-        type: Number,
-      },
-      ["Landscaping"]: {
-        type: Number,
-      },
-      ["Site road/1st stage"]: {
-        type: Number,
-      },
-    }),
-    ["Costs due after sale"]: new Schema({
-      title: {
-        type: String,
-        default: "Costs due after sale",
-      },
-      ["P2P Costs"]: new Schema({
-        title: {
-          type: String,
-          default: "P2P Costs",
-        },
-        ["P2P interest rate"]: new Schema({
-          label: {
-            type: String,
-            default: "%",
-          },
-          value: Number,
-        }),
-        ["Term (months)"]: {
-          type: Number,
-        },
-      }),
-      ["Angel Investor Costs"]: new Schema({
-        title: {
-          type: String,
-          default: "Angel Investor Costs",
-        },
-        ["Rate on investors money"]: new Schema({
-          label: {
-            type: String,
-            default: "%",
-          },
-          value: Number,
-        }),
-      }),
-      ["Sourced MSF (5% of profit)"]: new Schema({
-        title: {
-          type: String,
-          default: "Sourced MSF (5% of profit)",
-        },
-        ["Sale cost"]: {
-          type: Number,
-        },
-        ["legals-sale"]: {
-          type: Number,
-        },
-      }),
-    }),
-    ["Sales"]: new Schema({
-      title: {
-        type: String,
-        default: "Sales",
-      },
-      ["Unit 1"]: {
-        type: Number,
-      },
-      ["Unit 2"]: {
-        type: Number,
-      },
-      ["Unit 3"]: {
-        type: Number,
-      },
-      ["Unit 4"]: {
-        type: Number,
-      },
-      ["Unit 5"]: {
-        type: Number,
-      },
-      ["Unit 6"]: {
-        type: Number,
-      },
-      ["Unit 7"]: {
-        type: Number,
-      },
-      ["Unit 8"]: {
-        type: Number,
-      },
-      ["Unit 9"]: {
-        type: Number,
-      },
-      ["Unit 10"]: {
-        type: Number,
-      },
-      ["Unit 11"]: {
-        type: Number,
-      },
-    }),
-
-    ["P2P Loan"]: new Schema({
-      title: {
-        type: String,
-        default: "P2P Loan",
-      },
-    }),
-
-    ["Cash you put in"]: new Schema({
-      title: {
-        type: String,
-        default: "Cash you put in",
-      },
-      ["Borrower equity"]: {
-        type: Number,
-      },
-    }),
-    ["Money from an investor"]: new Schema({
-      title: {
-        type: String,
-        default: "Money from an investor",
-      },
-      ["Money (Money from an investor)"]: {
-        type: Number,
-      },
-    }),
-    ["Borrowing from P2P"]: new Schema({
-      title: {
-        type: String,
-        default: "Borrowing from P2P",
-      },
-    }),
-    ["Metrics (Stage 1)"]: new Schema({
-      title: {
-        type: String,
-        default: "Metrics (Stage 1)",
-      },
-    }),
-    ["Metrics stress test to 10%"]: new Schema({
-      title: {
-        type: String,
-        default: "Metrics stress test to 10%",
-      },
-    }),
-    ["Metrics stress test to 20%"]: new Schema({
-      title: {
-        type: String,
-        default: "Metrics stress test to 20%",
-      },
-    }),
-    ["Refinance"]: new Schema({
-      title: {
-        type: String,
-        default: "Refinance",
-      },
-    }),
-    ["Available borrowing"]: new Schema({
-      title: {
-        type: String,
-        default: "Available borrowing",
-      },
-    }),
-    ["Money left in the deal"]: new Schema({
-      title: {
-        type: String,
-        default: "Money left in the deal",
-      },
-    }),
-    ["Rental costs pcm (per unit)"]: new Schema({
-      title: {
-        type: String,
-        default: "Rental costs pcm (per unit)",
-      },
-      ["Lettings Fee (10%)"]: {
-        type: Number,
-      },
-      ["Insurance"]: {
-        type: Number,
-      },
-      ["Lending @ 4% or Rent"]: {
-        type: Number,
-      },
-      ["Gas and Electric"]: {
-        type: Number,
-      },
-      ["Water"]: {
-        type: Number,
-      },
-      ["Council Tax"]: {
-        type: Number,
-      },
-      ["Cleaner"]: {
-        type: Number,
-      },
-      ["Gardener"]: {
-        type: Number,
-      },
-      ["Broadband"]: {
-        type: Number,
-      },
-      ["Service Charge"]: {
-        type: Number,
-      },
-    }),
-    ["Rental Income pcm"]: new Schema({
-      title: {
-        type: String,
-        default: "Rental Income pcm",
-      },
-      ["Unit/Room 1"]: {
-        type: Number,
-      },
-      ["Unit/Room 2"]: {
-        type: Number,
-      },
-      ["Unit/Room 3"]: {
-        type: Number,
-      },
-      ["Unit/Room 4"]: {
-        type: Number,
-      },
-      ["Unit/Room 5"]: {
-        type: Number,
-      },
-      ["Unit/Room 6"]: {
-        type: Number,
-      },
-      ["Unit/Room 7"]: {
-        type: Number,
-      },
-      ["Unit/Room 8"]: {
-        type: Number,
-      },
-      ["Unit/Room 9"]: {
-        type: Number,
-      },
-      ["Unit/Room 10"]: {
-        type: Number,
-      },
-    }),
-    ["Metrics (Stage 3)"]: new Schema({
-      title: {
-        type: String,
-        default: "Metrics (Stage 3)",
-      },
-    }),
-    ["Total P2P Costs"]: new Schema({
-      title: {
-        type: String,
-        default: "Total P2P Costs",
-      },
-    }),
+    
+    ["Surveyors Valuation"]: {
+      type: Number,
+    },
+    ["Purchase Price"]: {
+      type: Number,
+    },
+    ["Buying Survey"]: {
+      type: Number,
+    },
+    ["Sourcing Fee"]: {
+      type: Number,
+    },
+    ["Insurance"]: {
+      type: Number,
+    },
+    ["SDLT"]: {
+      type: Number,
+    },
+    ["Buyers Solicitor"]: {
+      type: Number,
+    },
+    ["Planning/Architect (Borrowed)"]: {
+      type: Number,
+    },
+    ["Additional Legals"]: {
+      type: Number,
+    },
+    ["Money at Exchange"]: {
+      type: Number,
+    },
+    ["Sourced Solicitor Fee"]: {
+      type: Number,
+    },
+    ["Build"]: {
+      type: Number,
+    },
+    ["Project Manager (usually 10%)"]: {
+      type: Number,
+    },
+    ["CIL/S106"]: {
+      type: Number,
+    },
+    ["Planning/Architect (Costs during the project)"]: {
+      type: Number,
+    },
+    ["Legals during project"]: {
+      type: Number,
+    },
+    ["Drawdown Surveys"]: {
+      type: Number,
+    },
+    ["Warranty"]: {
+      type: Number,
+    },
+    ["Landscaping"]: {
+      type: Number,
+    },
+    ["Site road/1st stage"]: {
+      type: Number,
+    },
+    ["P2P interest rate"]: {
+      type: Number,
+    },
+    ["Term (months)"]: {
+      type: Number,
+    },
+    ["Rate on investors money"]: {
+      type: Number,
+    },
+    ["Sale cost"]: {
+      type: Number,
+    },
+    ["legals-sale"]: {
+      type: Number,
+    },
+    ["Unit 1"]: {
+      type: Number,
+    },
+    ["Unit 2"]: {
+      type: Number,
+    },
+    ["Unit 3"]: {
+      type: Number,
+    },
+    ["Unit 4"]: {
+      type: Number,
+    },
+    ["Unit 5"]: {
+      type: Number,
+    },
+    ["Unit 6"]: {
+      type: Number,
+    },
+    ["Unit 7"]: {
+      type: Number,
+    },
+    ["Unit 8"]: {
+      type: Number,
+    },
+    ["Unit 9"]: {
+      type: Number,
+    },
+    ["Unit 10"]: {
+      type: Number,
+    },
+    ["Unit 11"]: {
+      type: Number,
+    },
+    ["Borrower equity"]: {
+      type: Number,
+    },
+    ["Money (Money from an investor)"]: {
+      type: Number,
+    },
+    ["Lettings Fee (10%)"]: {
+      type: Number,
+    },
+    ["Insurance"]: {
+      type: Number,
+    },
+    ["Lending @ 4% or Rent"]: {
+      type: Number,
+    },
+    ["Gas and Electric"]: {
+      type: Number,
+    },
+    ["Water"]: {
+      type: Number,
+    },
+    ["Council Tax"]: {
+      type: Number,
+    },
+    ["Cleaner"]: {
+      type: Number,
+    },
+    ["Gardener"]: {
+      type: Number,
+    },
+    ["Broadband"]: {
+      type: Number,
+    },
+    ["Service Charge"]: {
+      type: Number,
+    },
+    ["Unit/Room 1"]: {
+      type: Number,
+    },
+    ["Unit/Room 2"]: {
+      type: Number,
+    },
+    ["Unit/Room 3"]: {
+      type: Number,
+    },
+    ["Unit/Room 4"]: {
+      type: Number,
+    },
+    ["Unit/Room 5"]: {
+      type: Number,
+    },
+    ["Unit/Room 6"]: {
+      type: Number,
+    },
+    ["Unit/Room 7"]: {
+      type: Number,
+    },
+    ["Unit/Room 8"]: {
+      type: Number,
+    },
+    ["Unit/Room 9"]: {
+      type: Number,
+    },
+    ["Unit/Room 10"]: {
+      type: Number,
+    },
   },
   {
     collection: "data_calc",

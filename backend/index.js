@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(tokenCheck);
+// app.use(tokenCheck);
 app.use("/api", router);
 
 app.listen(process.env.PORT || 5000, () => {

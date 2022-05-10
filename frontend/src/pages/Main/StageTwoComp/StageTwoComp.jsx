@@ -8,9 +8,9 @@ import {
   setCalcData,
   switchIsFetching,
   dataFetchError,
-} from "../../../redux/mainSlice";
+} from "../../../redux/calcData/calcDataSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { enqueueSnackbar, closeSnackbar } from "../../../redux/snackbarSlice";
+import { enqueueSnackbar, closeSnackbar } from "../../../redux/snackBar'/snackbarSlice";
 import { v4 } from "uuid";
 
 const StageTwoComp = () => {
